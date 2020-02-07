@@ -1,5 +1,6 @@
 import requests
 import json
+from time import sleep
 
 
 def makeRequest(stop):
@@ -12,9 +13,14 @@ def makeRequest(stop):
                     if line['lineBound'] == 'A Madrid (Intercanbiador De Moncloa)':#detecta si van a moncloa
                         try: 
                             if line['waitTime'].split(' ')[1] == 'min':
-                                response += 'Quedan ' + line['waitTime'].split(' ')[0] + ' minutos\n'#minutos restantes
+                                if line['waitTime'].split(' ')[0] == '1':
+                                    response += 'Queda ' + line['waitTime'].split(' ')[0] + ' minuto\n'
+                                
+                                else:
+                                    response += 'Quedan ' + line['waitTime'].split(' ')[0] + ' minutos\n'#minutos restantes
+
                         except:
-                                response += 'Próximo bus: ' + line['waitTime'] + '\n'#Hora de llegada
+                            response += 'Próximo bus: ' + line['waitTime'] + '\n'#Hora de llegada
 
             else:
                 response = 'No hay buses'
@@ -28,4 +34,6 @@ def makeRequest(stop):
     return response
 
 if __name__ == "__main__":
-    print(makeRequest('20647'))
+    while True:
+        print(makeRequest('20647'))
+        sleep(30)
