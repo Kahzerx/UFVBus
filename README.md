@@ -26,7 +26,7 @@ python UFVBuses.py
 
 ## Autores ✒️
 
-**Kahzerx** - _Descubrimiento de la API_ - [Kahzerx](https://github.com/Kahzerx/)
+**Kahzerx** - _Descubrimiento de la API, inicio e idea principal del proyecto_ - [Kahzerx](https://github.com/Kahzerx/)
 
 **JohanVonElectrum** - _Handle de errores, única línea_ - [JohanVonElectrum](https://github.com/JohanVonElectrum/)
 
